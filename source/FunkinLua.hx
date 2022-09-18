@@ -567,7 +567,11 @@ class FunkinLua {
 							Lua.pushnumber(lua, Lua.tonumber(luaInstance.lua, -1));
 						}else if(Lua.isstring(luaInstance.lua,-1)){
 							Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -1));
+						#if android
+						}else if(Lua.isboolean(luaInstance.lua,-1) != 0){
+						#else
 						}else if(Lua.isboolean(luaInstance.lua,-1)){
+						#end
 							Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
 						}else{
 							Lua.pushnil(lua);
@@ -673,10 +677,14 @@ class FunkinLua {
 							}else if(Lua.isstring(luaInstance.lua,-2)){
 								Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -2));
 								pop++;
-							}else if(Lua.isboolean(luaInstance.lua,-2)){
-								Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -2));
+							#if android
+						        }else if(Lua.isboolean(luaInstance.lua,-2) != 0){
+						        #else
+						        }else if(Lua.isboolean(luaInstance.lua,-2)){
+						        #end
+                                                                Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -2));
 								pop++;
-							}
+                                                        }
 							// TODO: table
 
 
@@ -687,10 +695,14 @@ class FunkinLua {
 							}else if(Lua.isstring(luaInstance.lua,-1)){
 								Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -1));
 								pop++;
-							}else if(Lua.isboolean(luaInstance.lua,-1)){
-								Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
+                                                        #if android
+						        }else if(Lua.isboolean(luaInstance.lua,-1) != 0){
+						        #else
+						        }else if(Lua.isboolean(luaInstance.lua,-1)){
+						        #end
+                                                                Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
 								pop++;
-							}
+                                                        }
 							// TODO: table
 
 							if(pop==2)Lua.rawset(lua, tableIdx); // then set it
