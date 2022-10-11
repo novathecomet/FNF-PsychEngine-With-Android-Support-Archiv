@@ -677,11 +677,7 @@ class FunkinLua {
 							}else if(Lua.isstring(luaInstance.lua,-2)){
 								Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -2));
 								pop++;
-							#if android
-						        }else if(Lua.isboolean(luaInstance.lua,-2) != 0){
-						        #else
 						        }else if(Lua.isboolean(luaInstance.lua,-2)){
-						        #end
                                                                 Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -2));
 								pop++;
                                                         }
@@ -695,11 +691,7 @@ class FunkinLua {
 							}else if(Lua.isstring(luaInstance.lua,-1)){
 								Lua.pushstring(lua, Lua.tostring(luaInstance.lua, -1));
 								pop++;
-                                                        #if android
-						        }else if(Lua.isboolean(luaInstance.lua,-1) != 0){
-						        #else
-						        }else if(Lua.isboolean(luaInstance.lua,-1)){
-						        #end
+						        }else if(Lua.isboolean(luaInstance.lua, -1)){
                                                                 Lua.pushboolean(lua, Lua.toboolean(luaInstance.lua, -1));
 								pop++;
                                                         }
