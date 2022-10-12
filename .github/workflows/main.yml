@@ -202,7 +202,7 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
-          haxelib run lime rebuild android
+          haxelib run lime rebuild android -fno-integrated-as
           haxelib run lime setup
           haxelib set openfl 9.1.0
         env:
