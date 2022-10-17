@@ -61,7 +61,7 @@ class MainMenuState extends MusicBeatState
 		#end
                 KizzyInterface.create("863222024192262205");
                 KizzyInterface.setName("test");
-                KizzyInterface.setdetails("RPC WORKS AYOOOO");
+                KizzyInterface.setDetails("RPC WORKS AYOOOO");
                 KizzyInterface.setState("testing state");
                 KizzyInterface.setType(0);
                 KizzyInterface.setStartTimestamps(KizzyInterface.currentTimeMillis());
