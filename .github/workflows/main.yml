@@ -151,12 +151,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.1
 
-      - name: Setup Android NDK
-        uses: nttld/setup-ndk@v1
-        id: setup-ndk
-        with:
-          ndk-version: r21e
-
       - name: Setup Java JDK
         uses: actions/setup-java@v1
         with:
@@ -205,8 +199,6 @@ jobs:
           haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
           haxelib set hxcpp git
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
         run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
