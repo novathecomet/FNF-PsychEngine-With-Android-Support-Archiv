@@ -176,11 +176,10 @@ jobs:
           haxelib install lime 7.9.0
           haxelib --quiet install format
           haxelib --quiet install hxp
-          haxelib --quiet install hxcpp
+          haxelib --quiet git hxcpp https://github.com/HaxeFoundation/hxcpp
           haxelib --quiet install lime-samples
           haxelib install openfl 9.1.0
           haxelib --never install flixel
-          haxelib run lime setup flixel
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install hscript
@@ -200,8 +199,9 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
-          haxelib run lime setup
+          haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
+          haxelib set hxcpp git
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
