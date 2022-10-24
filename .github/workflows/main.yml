@@ -176,7 +176,10 @@ jobs:
           haxelib install lime 7.9.0
           haxelib --quiet install format
           haxelib --quiet install hxp
-          haxelib --quiet git hxcpp https://github.com/HaxeFoundation/hxcpp
+          git clone https://github.com/HaxeFoundation/hxcpp
+          haxelib dev hxcpp hxcpp
+          cd hxcpp/tools/hxcpp
+          haxe compile.hxml
           haxelib --quiet install lime-samples
           haxelib install openfl 9.1.0
           haxelib --never install flixel
