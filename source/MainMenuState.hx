@@ -20,7 +20,6 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
-import kizzy.KizzyInterface;
 
 using StringTools;
 
@@ -59,14 +58,6 @@ class MainMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
 		#end
-                KizzyInterface.create("863222024192262205");
-                KizzyInterface.setName("test");
-                KizzyInterface.setDetails("RPC WORKS AYOOOO");
-                KizzyInterface.setState("testing state");
-                KizzyInterface.setType(0);
-                KizzyInterface.setStartTimestamps(KizzyInterface.currentTimeMillis());
-                KizzyInterface.setStatus("online");
-                KizzyInterface.build();
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 
 		camGame = new FlxCamera();
