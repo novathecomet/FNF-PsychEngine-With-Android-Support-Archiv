@@ -196,7 +196,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set lime 7.9.0
           haxelib set openfl 9.1.0
-          haxelib set hxcpp git
+          haxelib dev hxcpp hxcpp
 
       - name: Compile
         run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
