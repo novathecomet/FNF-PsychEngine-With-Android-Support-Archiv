@@ -170,7 +170,7 @@ jobs:
           haxelib --quiet install lime 7.9.0
           haxelib --quiet install format
           haxelib --quiet install hxp
-          git clone https://github.com/Sirox228/hxcpp
+          git clone -b ndk23 https://github.com/player-03/hxcpp
           haxelib dev hxcpp hxcpp
           haxelib --quiet install lime-samples
           haxelib --quiet install openfl 9.1.0
