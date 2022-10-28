@@ -172,9 +172,9 @@ jobs:
           haxelib dev lime ../lime
           haxelib --quiet install format
           haxelib --quiet install hxp
-          git clone -b ndk23 https://github.com/player-03/hxcpp
-          haxelib dev hxcpp hxcpp
-          cd hxcpp/tools/hxcpp
+          git clone https://github.com/Sirox228/hxcpp-new-ndk-support
+          haxelib dev hxcpp hxcpp-new-ndk-support
+          cd hxcpp-new-ndk-support/tools/hxcpp
           haxe compile.hxml
           haxelib --quiet install lime-samples
           haxelib --quiet install openfl 9.1.0
@@ -200,7 +200,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set lime git
           haxelib set openfl 9.1.0
-          haxelib dev hxcpp hxcpp
+          haxelib dev hxcpp hxcpp-new-ndk-support
           haxelib dev lime lime
           lime rebuild tools
           lime rebuild android
