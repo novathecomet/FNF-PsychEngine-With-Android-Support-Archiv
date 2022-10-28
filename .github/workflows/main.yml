@@ -166,8 +166,10 @@ jobs:
 
       - name: Install Haxelib
         run: |
-          haxelib --quiet git lime https://github.com/player-03/lime.git submodules
-          git -C /opt/hostedtoolcache/haxe/4.2.5/x64/lib/lime/git submodule update
+          haxelib setup ~/haxelib
+          sudo apt install libgl1-mesa-dev libglu1-mesa-dev g++ g++-multilib gcc-multilib libasound2-dev libx11-dev libxext-dev libxi-dev libxrandr-dev libxinerama-dev libpulse-dev -y
+          git clone --single-branch --branch submodules --recurse-submodules https://github.com/player-03/lime.git ../lime
+          haxelib dev lime ../lime
           haxelib --quiet install format
           haxelib --quiet install hxp
           git clone -b ndk23 https://github.com/player-03/hxcpp
@@ -175,7 +177,6 @@ jobs:
           cd hxcpp/tools/hxcpp
           haxe compile.hxml
           haxelib --quiet install lime-samples
-          lime rebuild tools
           haxelib --quiet install openfl 9.1.0
           haxelib --never install flixel
           haxelib --quiet install flixel-tools
@@ -200,6 +201,8 @@ jobs:
           haxelib set lime git
           haxelib set openfl 9.1.0
           haxelib dev hxcpp hxcpp
+          haxelib dev lime lime
+          lime rebuild tools
           lime rebuild android
         
       - name: Compile
