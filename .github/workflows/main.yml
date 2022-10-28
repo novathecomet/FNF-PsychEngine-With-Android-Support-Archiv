@@ -172,6 +172,7 @@ jobs:
           haxelib --quiet install hxp
           git clone -b ndk23 https://github.com/player-03/hxcpp
           haxelib dev hxcpp hxcpp
+          haxe hxcpp/tools/hxcpp/compile.hxml
           haxelib --quiet install lime-samples
           haxelib --quiet install openfl 9.1.0
           haxelib --never install flixel
