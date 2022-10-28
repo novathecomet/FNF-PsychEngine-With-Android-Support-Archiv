@@ -166,8 +166,8 @@ jobs:
 
       - name: Install Haxelib
         run: |
-          haxelib setup ~/haxelib
-          haxelib --quiet install lime 7.9.0
+          haxelib --quiet git lime https://github.com/player-03/lime.git submodules
+          git -C /opt/hostedtoolcache/haxe/4.2.5/x64/lib/lime/git submodule update
           haxelib --quiet install format
           haxelib --quiet install hxp
           git clone -b ndk23 https://github.com/player-03/hxcpp
@@ -175,6 +175,7 @@ jobs:
           cd hxcpp/tools/hxcpp
           haxe compile.hxml
           haxelib --quiet install lime-samples
+          lime rebuild tools
           haxelib --quiet install openfl 9.1.0
           haxelib --never install flixel
           haxelib --quiet install flixel-tools
@@ -196,9 +197,10 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
-          haxelib set lime 7.9.0
+          haxelib set lime git
           haxelib set openfl 9.1.0
           haxelib dev hxcpp hxcpp
+          lime rebuild android
         
       - name: Compile
         run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
