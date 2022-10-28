@@ -199,7 +199,7 @@ jobs:
           haxelib set lime git
           haxelib set openfl 9.1.0
           haxelib dev hxcpp hxcpp-new-ndk-support
-          haxelib dev lime lime
+          haxelib set lime 7.9.0
           lime rebuild tools
           lime rebuild android
         
