@@ -202,7 +202,7 @@ jobs:
           haxelib dev hxcpp hxcpp-new-ndk-support
           haxelib dev lime lime
           haxelib run lime rebuild tools
-          haxelib run lime rebuild android
+          haxelib run lime rebuild android -fno-integrated-as
         
       - name: Compile
         run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
