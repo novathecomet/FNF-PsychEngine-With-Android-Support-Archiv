@@ -167,7 +167,9 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib --quiet install lime 7.9.0
+          sudo apt install libgl1-mesa-dev libglu1-mesa-dev g++ g++-multilib gcc-multilib libasound2-dev libx11-dev libxext-dev libxi-dev libxrandr-dev libxinerama-dev libpulse-dev -y
+          git clone --single-branch --branch submodules --recurse-submodules https://github.com/sirox228/lime.git lime
+          haxelib dev lime lime
           haxelib --quiet install format
           haxelib --quiet install hxp
           git clone https://github.com/Sirox228/hxcpp-new-ndk-support
@@ -198,7 +200,9 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set openfl 9.1.0
           haxelib dev hxcpp hxcpp-new-ndk-support
-          haxelib set lime 7.9.0
+          haxelib dev lime lime
+          haxelib run lime rebuild tools
+          haxelib run lime rebuild android
         
       - name: Compile
         run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
