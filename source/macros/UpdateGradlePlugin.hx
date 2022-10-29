@@ -1,3 +1,4 @@
+#if macro
 package macros;
 
 import haxe.macro.Compiler;
@@ -24,3 +25,4 @@ class UpdateGradlePlugin {
         #end
     }
 }
+#end
