@@ -196,7 +196,7 @@
 	<android permission="android.permission.INTERNET"/>
 
         <android gradle-version="8.0-milestone-3" />
-	<android gradle-plugin="8.0" />
+	<android gradle-plugin="8.0.0" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
