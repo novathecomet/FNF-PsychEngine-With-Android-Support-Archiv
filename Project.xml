@@ -196,6 +196,7 @@
 	<android permission="android.permission.INTERNET"/>
 
         <android gradle-version="7.5" />
+        <config:android gradle-plugin="7.4.0" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
