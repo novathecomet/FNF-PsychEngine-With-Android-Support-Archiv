@@ -198,8 +198,6 @@
         <android gradle-version="7.5" />
 	<android gradle-plugin="7.4.0" />
 
-        <haxeflag name="--macro" value="macros.UpdateGradlePlugin.run('4.2.2')" />
-
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
