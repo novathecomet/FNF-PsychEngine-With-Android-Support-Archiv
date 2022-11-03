@@ -31,7 +31,7 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config ANDROID_SETUP true
           haxelib run lime rebuild tools
-          haxelib run lime rebuild android -DSTATICCOMPILE
+          haxelib run lime rebuild android
           ls lime/ndll/Android
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
