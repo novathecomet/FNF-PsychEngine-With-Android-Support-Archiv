@@ -36,10 +36,10 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: shared
-          path: lime/ndll/Android/liblime-64.so
+          name: objects
+          path: lime/project/obj
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: static
-          path: lime/ndll/Android/liblime-64.a
+          name: allobjects
+          path: lime/project/all_objs
