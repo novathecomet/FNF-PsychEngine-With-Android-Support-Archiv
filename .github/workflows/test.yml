@@ -24,10 +24,7 @@ jobs:
           haxelib dev lime lime
           haxelib --quiet install format
           haxelib --quiet install hxp
-          git clone https://github.com/Sirox228/hxcpp-new-ndk-support
-          haxelib dev hxcpp hxcpp-new-ndk-support
-          cd hxcpp-new-ndk-support/tools/hxcpp
-          haxe compile.hxml
+          haxelib --quiet install hxcpp
           haxelib --quiet install lime-samples
           haxelib --quiet install openfl 9.1.0
       - name: Setup Lime
